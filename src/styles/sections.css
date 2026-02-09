@@ -1,7 +1,7 @@
 .hero {
   position: relative;
-  padding: 40px 6vw 120px;
-  background: radial-gradient(circle at top, #1f4c42 0%, #0f2f29 65%, #0a1e1a 100%);
+  padding: 54px 6vw 130px;
+  background: radial-gradient(circle at 10% 10%, #275949 0%, #132f28 45%, #0a1e1a 100%);
   color: #e7f3d0;
   overflow: hidden;
   min-height: 78vh;
@@ -21,6 +21,18 @@
       transparent 45%
     );
   pointer-events: none;
+}
+
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(10, 30, 26, 0.15) 0%,
+    rgba(10, 30, 26, 0) 40%,
+    rgba(15, 60, 51, 0.35) 100%
+  );
 }
 
 .hero__bg::before,
@@ -87,37 +99,200 @@
   border-color: var(--yellow-300);
 }
 
-.hero__content {
+.hero__grid {
   position: relative;
   z-index: 1;
-  max-width: 760px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 42px;
+  align-items: center;
+}
+
+.hero__copy {
+  max-width: 620px;
 }
 
 .hero__eyebrow {
   font-family: "Bodoni MT", "Didot", "Georgia", serif;
   color: var(--yellow-300);
   letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
 }
 
 .hero__title {
-  font-size: clamp(2.5rem, 6vw, 4.4rem);
-  margin: 12px 0;
+  font-size: clamp(2.9rem, 6.2vw, 5rem);
+  margin: 14px 0 10px;
 }
 
 .hero__subtitle {
   max-width: 520px;
-  margin: 0 auto 24px;
-  color: #d5e9c9;
+  margin: 0 0 26px;
+  color: rgba(231, 243, 208, 0.85);
+}
+
+.hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.hero__metric {
+  padding: 16px 18px;
+  background: rgba(10, 22, 19, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero__metric span {
+  display: block;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+}
+
+.hero__metric small {
+  color: rgba(231, 243, 208, 0.75);
+  font-size: 0.9rem;
+}
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.95rem;
+}
+
+.hero__links a {
+  color: var(--yellow-300);
+  border-bottom: 1px solid rgba(249, 211, 109, 0.5);
+  padding-bottom: 2px;
+}
+
+.hero__panel {
+  background: rgba(12, 22, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-xl);
+  padding: 30px;
+  box-shadow: var(--shadow-strong);
+  backdrop-filter: blur(10px);
+}
+
+.hero__panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.hero__badge {
+  align-self: flex-start;
+  background: rgba(246, 184, 0, 0.2);
+  color: var(--yellow-300);
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.hero__panel p {
+  margin-bottom: 16px;
+}
+
+.hero__highlights {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 0;
+}
+
+.hero__highlights li {
+  padding-left: 18px;
+  position: relative;
+}
+
+.hero__highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--yellow-300);
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: center;
+}
+
+.hero__showcase {
+  display: grid;
+  gap: 16px;
+}
+
+.hero__showcase-card {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b1815;
+  border-radius: var(--radius-l);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero__showcase-card--dark {
+  background: rgba(10, 22, 19, 0.7);
+  color: #e7f3d0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero__showcase-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  margin-bottom: 12px;
+}
+
+.hero__swatches {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.hero__swatches span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.hero__swatches span:nth-child(1) {
+  background: #0f5b6e;
+}
+
+.hero__swatches span:nth-child(2) {
+  background: #2f7a60;
+}
+
+.hero__swatches span:nth-child(3) {
+  background: #f6b800;
+}
+
+.hero__showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hero__showcase-grid div {
+  height: 52px;
+  border-radius: 12px;
+  background: #f0ebdc;
 }
 
 .about {
