@@ -1,0 +1,119 @@
+:root {
+  --green-950: #0a1e1a;
+  --green-900: #0f2f29;
+  --green-800: #15473c;
+  --green-700: #1d5a4a;
+  --green-500: #2f7a60;
+  --green-300: #60b08b;
+  --yellow-500: #f6b800;
+  --yellow-300: #f9d36d;
+  --cream-100: #f7f1df;
+  --cream-200: #efe6c9;
+  --teal-700: #0b4a5a;
+  --teal-600: #0f5b6e;
+  --teal-400: #1a7b8f;
+  --ink: #0b1815;
+  --paper: #fbf6e6;
+  --glass: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.18);
+  --shadow-soft: 0 18px 40px rgba(9, 24, 21, 0.18);
+  --shadow-strong: 0 28px 70px rgba(8, 18, 16, 0.32);
+  --radius-s: 10px;
+  --radius-m: 16px;
+  --radius-l: 22px;
+  --radius-xl: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Palatino Linotype", "Book Antiqua", "Garamond", serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, #fff9ea 0%, var(--cream-100) 40%, #f1e6cd 100%);
+  line-height: 1.7;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(18, 59, 51, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  padding: 100px 6vw;
+  position: relative;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bodoni MT", "Didot", "Bodoni 72", "Georgia", serif;
+  letter-spacing: 0.8px;
+  text-transform: none;
+}
+
+h2 {
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  margin-bottom: 14px;
+}
+
+p {
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

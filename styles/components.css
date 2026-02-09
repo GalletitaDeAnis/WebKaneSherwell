@@ -1,0 +1,298 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #1a7b8f 0%, #0f5b6e 55%, #0b4a5a 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: var(--shadow-strong);
+  filter: brightness(1.05);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--yellow-300);
+  outline-offset: 3px;
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #f7f1df;
+  backdrop-filter: blur(8px);
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--teal-600);
+  color: var(--teal-700);
+  box-shadow: none;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 32px;
+}
+
+.tab {
+  border: 1px solid #c7c2aa;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 18px rgba(11, 24, 20, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(11, 24, 20, 0.18);
+}
+
+.tab--active {
+  background: linear-gradient(135deg, #2f7a60 0%, #1d5a4a 100%);
+  color: #fff;
+  border-color: transparent;
+}
+
+.frame {
+  background: #fff;
+  border-radius: var(--radius-m);
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(15, 47, 41, 0.08);
+}
+
+.frame__label {
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.frame__media {
+  background: #101816;
+  color: #f6b800;
+  height: 230px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.testimonials .quote {
+  background: #fff;
+  padding: 24px;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(15, 47, 41, 0.08);
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonials .quote::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(246, 184, 0, 0.15);
+}
+
+.testimonials .quote:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+.quote span {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.service-card {
+  background: rgba(10, 50, 32, 0.7);
+  padding: 30px;
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
+}
+
+.pill {
+  background: #18473d;
+  border-radius: var(--radius-l);
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pill:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+.pricing__row {
+  display: grid;
+  grid-template-columns: 1.6fr 0.4fr 1.4fr 0.7fr 0.6fr 0.8fr;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-s);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(12, 40, 34, 0.55);
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing__row + .pricing__row {
+  margin-top: 10px;
+}
+
+.pricing__row:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.pricing__header {
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: rgba(11, 31, 27, 0.8);
+}
+
+.pricing__header:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.pricing__summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.pricing__total {
+  background: #0c2d26;
+  padding: 18px 24px;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-soft);
+}
+
+.term {
+  background: linear-gradient(135deg, #c4f15f 0%, #aeea2a 55%, #90d623 100%);
+  color: #0c1c18;
+  padding: 26px;
+  border-radius: var(--radius-l);
+  position: relative;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.term:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+.faq__card {
+  background: #fff;
+  padding: 28px;
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-soft);
+}
+
+.faq__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--yellow-300);
+  display: grid;
+  place-items: center;
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.faq__item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  background: #2d5a50;
+  color: #e7f3d0;
+  padding: 20px;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+.step__badge {
+  background: #0c3f34;
+  color: #b7f063;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  letter-spacing: 1px;
+}
+
+.step__meta {
+  font-family: "Bodoni MT", "Didot", "Georgia", serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.quote__panel {
+  background: linear-gradient(135deg, #0f3c33 0%, #0c2f28 60%, #0a241f 100%);
+  color: #e7f3d0;
+  padding: 46px;
+  border-radius: var(--radius-xl);
+  text-align: center;
+  box-shadow: var(--shadow-strong);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.quote__actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
