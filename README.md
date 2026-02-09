@@ -10,13 +10,15 @@ Static website mockup based on the provided references. All text and visuals are
 
 ## Structure
 
-- HTML partials live in `src/partials` and are composed into `index.html`.
-- Styles are split across `styles/base.css`, `styles/components.css`,
-  `styles/sections.css`, and `styles/responsive.css`.
+- HTML partials live in `src/partials` and are composed into `src/index.html`.
+- Styles are split across `src/styles/base.css`, `src/styles/components.css`,
+  `src/styles/sections.css`, and `src/styles/responsive.css`.
 
 ## Build
 
-Run `npm run build`. Output is in `dist`.
+Run `npm run build`. Output is in `docs`.
+
+To open locally without Vite, open `docs/index.html`.
 
 ## GitHub Pages
 

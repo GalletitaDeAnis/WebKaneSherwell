@@ -7,7 +7,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: "/WebKaneSherwell/",
+  base: "./",
+  root: "src",
+  build: {
+    outDir: "../docs",
+    emptyOutDir: true,
+  },
   plugins: [
     handlebars({
       partialDirectory: path.resolve(__dirname, "src/partials"),
